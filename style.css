@@ -12,15 +12,15 @@ h1 {
 }
 /* Animation */
 h1 {
-    animation: animated-text 6s steps(40,end) 1s 1 normal both,
-               animated-cursor 1000ms steps(40,end) infinite;
+    animation: animated-text 6s steps(20,end) 1s 1 normal both,
+               animated-cursor 1000ms steps(20,end) infinite;
 }
   
   /* text animation */
   
   @keyframes animated-text{
     from{width: 0;}
-    to{width: 860px;}
+    to{width: 430px;}
   }
   
   /* cursor animations */
@@ -34,7 +34,6 @@ h1 {
     display: flex;
     flex-direction: row;
     padding: 10px;
-    /*justify-content: space-around;*/
 }
 
 .profile { 
@@ -59,7 +58,6 @@ p {
     display: flex;
     flex-direction: row;
     padding-left: 50px;
-    /*justify-content: space-around;*/
 }
 .footer-icon {
     margin: 5px;
