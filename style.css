@@ -1,0 +1,70 @@
+body {
+    background-color: rgb(21, 71, 52); /* Cal Poly green */
+}
+
+h1 {
+    border-right: solid 3px rgba(198, 146, 20);
+    white-space: nowrap;
+    overflow: hidden;    
+    font-family: 'Roboto Mono', monospace;  
+    font-size: 36px;
+    color: rgba(198, 146, 20); /* Cal Poly gold */
+}
+/* Animation */
+h1 {
+    animation: animated-text 6s steps(40,end) 1s 1 normal both,
+               animated-cursor 1000ms steps(40,end) infinite;
+}
+  
+  /* text animation */
+  
+  @keyframes animated-text{
+    from{width: 0;}
+    to{width: 860px;}
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor{
+    from{border-right-color: rgba(198, 146, 20);}
+    to{border-right-color: transparent;}
+  }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    /*justify-content: space-around;*/
+}
+
+.profile { 
+    border-radius: 50%;
+    margin: 10px;
+    max-width: 300px;
+    max-height:300px;
+    min-width: 300px;
+    min-height:300px;
+}
+
+p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(120, 159, 144); /* Cal Poly "sycamore" */
+    margin: 10px;
+    line-height: 2.2;
+    
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    /*justify-content: space-around;*/
+}
+.footer-icon {
+    margin: 5px;
+    padding-bottom: 20px;
+}
+::selection {
+    background: rgba(198, 146, 20);
+}
