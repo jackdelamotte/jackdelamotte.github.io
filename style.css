@@ -1,5 +1,15 @@
 body {
-    background-color: rgb(21, 71, 52); /* Cal Poly green */
+    background-color: rgb(21, 71, 52);
+}
+
+.page-container {
+    justify-content: center;
+}
+
+.header {
+    padding-left: 10px;
+    display: flex;
+    justify-content: left;
 }
 
 h1 {
@@ -7,10 +17,10 @@ h1 {
     white-space: nowrap;
     overflow: hidden;    
     font-family: 'Roboto Mono', monospace;  
-    font-size: 36px;
-    color: rgba(198, 146, 20); /* Cal Poly gold */
+    font-size: 225%;
+    color: rgba(198, 146, 20);
 }
-/* Animation */
+/* Animation */ 
 h1 {
     animation: animated-text 6s steps(20,end) 1s 1 normal both,
                animated-cursor 1000ms steps(20,end) infinite;
@@ -30,7 +40,7 @@ h1 {
     to{border-right-color: transparent;}
   }
 
-.container {
+.container-sm {
     display: flex;
     flex-direction: row;
     padding: 10px;
@@ -43,26 +53,52 @@ h1 {
     max-height:300px;
     min-width: 300px;
     min-height:300px;
+
+    animation: 4s fadeIn;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    
+    visibility: hidden;
 }
+
 
 p {
     font-family: 'Roboto Mono', monospace;
-    font-size: 20px;
-    color: rgba(120, 159, 144); /* Cal Poly "sycamore" */
+    /*font-size: 20px;*/
+    font-size: 150%;
+    color: rgba(120, 159, 144); 
     margin: 10px;
     line-height: 2.2;
     
 }
 
-.footer {
+.page-footer {
     display: flex;
     flex-direction: row;
-    padding-left: 50px;
+    padding-left: 10px;
 }
 .footer-icon {
     margin: 5px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 ::selection {
     background: rgba(198, 146, 20);
+}
+
+p {  
+    animation: 4s fadeIn;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    
+    visibility: hidden;
+}
+  
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
 }
