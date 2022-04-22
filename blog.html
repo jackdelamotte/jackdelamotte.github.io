@@ -21,16 +21,108 @@
         </p>
 
         <p class="padded">
+          <span class="h3"
+            >A Minimal Spark RDD Setup in IntelliJ</span
+          ><span class="text-small text-muted"> 4/21/22</span>
+        </p>
+        <p class="padded">
+          Hello, blog! It's been about a year since my first post so I thought
+          it was time I make another contribution here :). My (last!) spring
+          quarter at Cal Poly is underway, but I'm still reflecting on the things
+          I learned last term. One thing in particular stands out as interesting which was using Scala and
+          <a href="https://spark.apache.org/" target="_blank">Apache Spark</a>
+          <a
+            href="https://www.tutorialspoint.com/apache_spark/apache_spark_rdd.htm"
+            target="_blank"
+            >RDDs</a
+          >
+          for
+          <a
+            href="https://en.wikipedia.org/wiki/Distributed_computing"
+            target="_blank"
+            >distributed computing</a
+          >
+          problems. RDDs, unlike MapReduce, are actually cool. To me it feels
+          like the intersection of sleek higher-order functions
+           and big data processing. I took a data mining
+          class last quarter and let's just say that using Spark RDDs instead of
+          lengthy python/pandas scripts could have saved me and my classmates
+          both scraps of dev time and literal hours spent letting computations
+          run (we were working with some large datasets). Another key advantage
+          of Spark over another distributed model like MapReduce is that writing
+          semi-complex queries can be pretty quick, for example, writing a
+          K-Nearest-Neighbors classification algorithm in one (mostly) readable
+          line is surprisingly straightforward, especially once you're familiar
+          with some Spark tricks. Anyways, the real reason for writing this post
+          is not just to talk about why Spark but more importantly, _how_ Spark.
+          There's a lot of environments you could use but since I'm using Scala,
+          IntelliJ was probably my best option. However, when looking for a
+          tutorial on the web to Wiki-How me into RDD greatness, I was surprised
+          I couldn't find any guides simple enough for me to get things running,
+          so that's exactly what I hope to do; for any future students that run
+          into this issue and somehow find my blog despite 0 SEO :). Here were
+          my steps:
+          <ol>
+            <li>Download IntelliJ</li>
+            You can get the community version
+            <a href="https://www.jetbrains.com/idea/download/" target="_blank"
+              >here</a>
+            <li>Install the Scala plugin</li>
+            There's a plugins tab on the side of the
+            IntelliJ startup window. That's where you'll go to download the Scala
+            plugin!
+            <img src="SparkBlog1.png" width="80%"/>
+            <br />
+            <li>Create a new project</li>
+            From the projects tab on the startup
+            window, click “New project” and you should end up at a menu that looks
+            like this.
+            <br />
+            <img src="SparkBlog2.png" width="80%"/>
+            <br />
+            Choose sbt as your project type. 
+          
+            <li>Choose your project specs</li>
+            This is where I first ran into some issues. For some reason, I've only
+            been able to get this to work with my sbt version set to 1.0.4, Java
+            8, and Scala version 2.11.8 
+            <br />
+            <img src="SparkBlog3.png" width="80%"/>
+            <br />
+            <li>Build your project</li>
+            When you click “finish”, your project should get created, be sure to give it a few
+            seconds to extract the structure from the project specs and then you
+            should be set. 
+            <li>Get your build.sbt file right</li>
+            The build.sbt file is
+            where you include Spark from Apache and set your version, along with a
+            couple other things. Here's the template that worked for me:
+            <br />
+            <img src="SparkBlog4.png" width="80%"/>
+            <br />
+            Once you have your sbt file setup, right click on it in the file
+            navigator and select “build module *your app name*”, this process
+            should only take a second.
+            <li>Go crazy! </li>
+            You should be all set to start
+            using RDDs! Create a scala object (in src/main/scala) and use the
+            following import: 
+            <br />
+            <code>import org.apache.spark.{ SparkConf, SparkContext }</code>
+          </ol>
+        </p>
+
+        <p class="padded">
           <span class="h3">Init.</span
           ><span class="text-small text-muted"> 3/25/21</span>
         </p>
         <p class="padded">
-          Hello. This is my first blog post! I know I’m about twenty years late
+          Hello. This is my first blog post! I know I'm about twenty years late
           to the blogging scene but if the
           <a href="https://indieweb.org/" target="_blank"> IndieWeb </a>
           movement gains any serious traction over the next few years
-          (unfortunately, it won’t) then I might just be a few years ahead of
-          it’s big resurgence. I’m actually half kidding, I think blogging is
+          (unfortunately, it won't) then I might just be a few years ahead of
+          it's big resurgence. I'm actually half kidding, I think blogging is
           thriving on certain parts of the internet! I still like to read
           through a handful of personal blogs including those by
           <a href="https://www.calnewport.com/blog/" target="_blank">
@@ -42,23 +134,23 @@
           <a href="https://www.thepringlesprogress.com/blog" target="_blank">
             Maddie Pringle </a
           >. <br /><br />
-          Regardless of the current state of blogging and the web, I’ve decided
+          Regardless of the current state of blogging and the web, I've decided
           this has the potential to be an enjoyable way for me to record some
           thoughts, develop a creative outlet, and express my agency and
           individuality in a way that is independent of the engagement based
-          validation loops of modern social platforms. I’m not really sure what
-          exactly I want to do with this blog yet. Maybe I’ll write about
+          validation loops of modern social platforms. I'm not really sure what
+          exactly I want to do with this blog yet. Maybe I'll write about
           running or other outdoor endeavors, college, books, or whatever is
           interesting to me at the time. Maybe someone will find it interesting,
-          or maybe they won’t. I guess that could be the simple beauty of a
+          or maybe they won't. I guess that could be the simple beauty of a
           blog, freedom to write about whatever, for my own sake, and on my own
           terms.
           <br /><br />
-          I don’t feel as though I have anything particularly interesting or
+          I don't feel as though I have anything particularly interesting or
           important to contribute to the infinite knowledge base that is the
-          internet, but I think that’s okay. I’m sure I’ll continue to wrestle
+          internet, but I think that's okay. I'm sure I'll continue to wrestle
           with the question of whether or not blogging is a worthwhile activity
-          but for now, I think it will be fun! So let’s see where this goes!
+          but for now, I think it will be fun! So let's see where this goes!
         </p>
       </div>
       <div class="col-2"></div>
